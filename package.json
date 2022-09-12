@@ -1,0 +1,18 @@
+{
+  "name": "zsu-munchies-late-for-class",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run build && lite-server --baseDir='dev'",
+    "build:js": "esbuild src/game.js --format=iife --bundle --outdir=dev",
+    "build:html": "html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true src/index.html -o dist/index.html",
+    "build": "npm run build:js && npm run build:html"
+  },
+  "author": "polluterofminds",
+  "license": "MIT",
+  "dependencies": {
+    "kontra": "^8.0.0",
+    "lite-server": "^2.6.1"
+  }
+}
